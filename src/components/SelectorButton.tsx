@@ -19,6 +19,11 @@ export const SelectorButton: React.FC<SelectorButtonProps> = ({
       ? "selector-button__text--selected"
       : "";
 
+  const selectedSubtextStyle =
+    selectedTimeSeconds === timeSecondsLabel
+      ? "selector-button__subtext--selected"
+      : "";
+
   const selectedBackgroundStyle =
     selectedTimeSeconds === timeSecondsLabel
       ? "selector-button__background--selected"
@@ -40,7 +45,11 @@ export const SelectorButton: React.FC<SelectorButtonProps> = ({
         >
           {minutes}
         </div>
-        <div>minutes</div>
+        <div
+          className={`${styles["selector-button__subtext"]} ${styles[selectedSubtextStyle]}`}
+        >
+          min
+        </div>
       </div>
     </div>
   );

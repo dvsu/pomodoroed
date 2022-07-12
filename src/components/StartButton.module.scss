@@ -12,6 +12,11 @@
   position: relative;
   border-radius: 0.7rem;
 
+  &:hover,
+  &:active {
+    cursor: pointer;
+  }
+
   &__content {
     position: absolute;
     width: 96%;

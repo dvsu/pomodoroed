@@ -12,6 +12,11 @@
   position: relative;
   border-radius: 0.7rem;
 
+  &:hover,
+  &:active {
+    cursor: pointer;
+  }
+
   &--selected {
     background-image: linear-gradient(
       to bottom right,
@@ -48,7 +53,17 @@
   &__text {
     font-size: 3rem;
     color: rgb(64, 64, 64);
-    // text-shadow: 0 0 5px rgb(251, 100, 100);
+    display: block;
+
+    &--selected {
+      color: rgb(203, 68, 0);
+      text-shadow: 0 0 3px rgb(255, 85, 0);
+    }
+  }
+
+  &__subtext {
+    font-size: 1.3rem;
+    font-weight: 600;
 
     &--selected {
       color: rgb(203, 68, 0);

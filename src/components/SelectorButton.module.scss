@@ -1,0 +1,58 @@
+.selector-button {
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(255, 255, 255),
+    rgb(167, 167, 167) 20%,
+    rgb(159, 159, 159),
+    rgb(94, 94, 94) 40%,
+    rgb(26, 26, 26) 90%
+  );
+  height: 6rem;
+  position: relative;
+  border-radius: 0.7rem;
+
+  &--selected {
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(255, 255, 255),
+      rgb(254, 194, 82) 30%,
+      rgb(255, 166, 0),
+      rgb(197, 105, 0) 40%,
+      rgb(26, 26, 26) 90%
+    );
+  }
+
+  &__background {
+    position: absolute;
+    width: 96%;
+    height: 90%;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(215, 215, 215),
+      rgb(131, 131, 131)
+    );
+    transform: translate(2%, 5%);
+    border-radius: 0.7rem;
+    text-align: center;
+
+    &--selected {
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(255, 136, 0),
+        orange
+      );
+    }
+  }
+
+  &__text {
+    font-size: 3rem;
+    color: rgb(64, 64, 64);
+    // text-shadow: 0 0 5px rgb(251, 100, 100);
+
+    &--selected {
+      color: rgb(203, 68, 0);
+      text-shadow: 0 0 3px rgb(255, 85, 0);
+    }
+  }
+}

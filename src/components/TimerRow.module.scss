@@ -1,0 +1,28 @@
+@import "../../sass/abstracts/mixins";
+
+$gutter-horizontal: 1.5rem;
+
+.timer-row {
+  font-size: 15rem;
+  margin: 5rem auto;
+  // max-width: $grid-width;
+
+  @include clearfix;
+
+  [class^="TimerRow_"] {
+    float: left;
+  }
+
+  [class^="TimerRow_digit-odd-"] {
+    margin-right: $gutter-horizontal;
+  }
+
+  .digit-odd-1-6,
+  .digit-even-1-6 {
+    width: calc((100% - (3 * #{$gutter-horizontal}) - (2 * 5%)) / 6);
+  }
+
+  .separator {
+    width: 5%;
+  }
+}

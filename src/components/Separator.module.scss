@@ -1,0 +1,29 @@
+$font-size: 100vw / 11;
+$digit-height: calc(#{$font-size} * 1.2);
+
+$digit-color-primary: rgb(255, 255, 255);
+$digit-color-secondary: rgb(218, 218, 218);
+$digit-color-tertiary: rgb(80, 80, 80);
+
+.separator {
+  width: 100%;
+  height: $digit-height;
+  position: relative;
+  text-align: center;
+  color: white;
+
+  .content {
+    position: absolute;
+    transform: translate(25%, 0%);
+    background-image: linear-gradient(
+      to bottom right,
+      $digit-color-primary,
+      $digit-color-secondary 70%,
+      $digit-color-tertiary 90%
+    );
+    background-clip: text;
+    color: transparent;
+    font-size: $font-size;
+    font-weight: 400;
+  }
+}

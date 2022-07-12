@@ -1,0 +1,56 @@
+$font-size: 100vw / 10;
+$digit-height: calc(#{$font-size} * 1.3);
+$edge-color-primary: rgb(233, 233, 233);
+$edge-color-secondary: rgb(108, 108, 108);
+$edge-color-tertiary: rgb(25, 25, 25);
+
+$digit-background-color-primary: rgb(68, 68, 68);
+$digit-background-color-secondary: rgb(48, 48, 48);
+$digit-background-color-tertiary: rgb(28, 28, 28);
+
+$digit-color-primary: rgb(255, 255, 255);
+$digit-color-secondary: rgb(218, 218, 218);
+$digit-color-tertiary: rgb(80, 80, 80);
+
+.digit {
+  width: 100%;
+  height: $digit-height;
+  max-height: 250px;
+  max-width: 200px;
+  background-image: linear-gradient(
+    to top left,
+    $edge-color-primary,
+    $edge-color-secondary 40%,
+    $edge-color-tertiary 50%
+  );
+  position: relative;
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+
+  .background {
+    width: 96%;
+    height: 96%;
+    transform: translate(2%, 2.5%);
+    border-radius: 13px;
+    position: absolute;
+    background-image: linear-gradient(
+      to top left,
+      $digit-background-color-primary,
+      $digit-background-color-secondary 30%,
+      $digit-background-color-tertiary 70%
+    );
+
+    .content {
+      background-image: linear-gradient(
+        to bottom right,
+        $digit-color-primary,
+        $digit-color-secondary 50%,
+        $digit-color-tertiary 80%
+      );
+      background-clip: text;
+      color: transparent;
+      font-size: $font-size;
+    }
+  }
+}

@@ -1,24 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useState } from "react";
+import { TimerCase } from "./components/TimerCase";
+import "./App.css";
 
 function App() {
+  const [isStarted, setIsStarted] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [seconds, setSeconds] = useState(0);
+  const [selectedTimeSeconds, setSelectedTimeSeconds] = useState(0);
+  const [timerInterval, setTimerInterval] = useState(0);
+
+  const resetTimer = () => {
+    clearInterval(timerInterval);
+    setTimerInterval(0);
+    setSeconds(0);
+    setSelectedTimeSeconds(0);
+    setIsStarted((prevState) => !prevState);
+    setIsDisabled(true);
+  };
+
+  const startTimer = () => {
+    setIsStarted((prevState) => !prevState);
+    const interval: number = window.setInterval(() => {
+      setSeconds((prevSec) => prevSec - 1);
+    }, 1000);
+    setTimerInterval(interval);
+  };
+
+  if (seconds === 0 && isStarted) {
+    resetTimer();
+  }
+
+  const buttonHandler = () => {
+    if (timerInterval) {
+      resetTimer();
+      return;
+    }
+    startTimer();
+  };
+
+  const timeSelectionHandler = (time: number) => {
+    setSeconds(time);
+    setSelectedTimeSeconds(time);
+    setIsDisabled(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TimerCase
+        seconds={seconds}
+        timerSelectorList={[900, 1500, 2700, 3600]}
+        selectedTimeSeconds={selectedTimeSeconds}
+        onSelected={timeSelectionHandler}
+        onClickStartButton={buttonHandler}
+        isStarted={isStarted}
+        isDisabled={isDisabled}
+      />
     </div>
   );
 }

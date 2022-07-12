@@ -1,0 +1,38 @@
+$grid-width: 800px;
+
+$timer-background-color-primary: rgb(81, 81, 81);
+$timer-background-color-secondary: rgb(64, 64, 64);
+$timer-background-color-tertiary: rgb(22, 22, 22);
+
+.timer-case {
+  //   position: absolute;
+  margin: 0 auto;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(0, 50%);
+  background-image: linear-gradient(
+    to bottom right,
+    $timer-background-color-primary 0%,
+    $timer-background-color-secondary 20%,
+    $timer-background-color-tertiary 50%
+  );
+  box-shadow: 2px 2px 0px #131313, -2px -2px 0px #cbcbcb;
+  border-radius: 3rem;
+  padding: 5rem 20rem;
+  max-width: $grid-width;
+}
+
+.brand {
+  position: absolute;
+  top: 4%;
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(255, 255, 255) 30%,
+    rgb(100, 100, 100) 95%
+  );
+  background-clip: text;
+  color: transparent;
+}

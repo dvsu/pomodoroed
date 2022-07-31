@@ -1,28 +1,25 @@
-@import "../../sass/abstracts/mixins";
-
-$gutter-horizontal: 1.5rem;
+@import "../../sass/abstracts/variables";
 
 .timer-row {
   font-size: 15rem;
-  margin: 5rem auto;
-  // max-width: $grid-width;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns:
+    [time-start] repeat(2, minmax(min-content, [hh-start] 10rem [hh-end]))
+    [separator-first-start]
+    max-content
+    [separator-first-end]
+    repeat(2, minmax(min-content, [mm-start] 10rem [mm-end]))
+    [separator-second-start]
+    max-content
+    [separator-second-end]
+    repeat(2, minmax(min-content, [ss-start] 10rem [ss-end]))
+    [time-end];
+  grid-gap: 0.5rem;
+  padding: 0 5vw;
+  margin-bottom: 1rem;
 
-  @include clearfix;
-
-  [class^="TimerRow_"] {
-    float: left;
-  }
-
-  [class^="TimerRow_digit-odd-"] {
-    margin-right: $gutter-horizontal;
-  }
-
-  .digit-odd-1-6,
-  .digit-even-1-6 {
-    width: calc((100% - (3 * #{$gutter-horizontal}) - (2 * 5%)) / 6);
-  }
-
-  .separator {
-    width: 5%;
+  @media only screen and (min-width: $bp-mobile-small) {
+    grid-gap: 1rem;
   }
 }

@@ -8,9 +8,8 @@ interface DigitProps {
 export const Digit: React.FC<DigitProps> = ({ value }) => {
   return (
     <div className={styles.digit}>
-      <div className={styles.background}>
-        <div className={styles.content}>{value}</div>
-      </div>
+      <div className={styles.content}>{value}</div>
+      {/* <div className={styles.background}></div> */}
     </div>
   );
 };

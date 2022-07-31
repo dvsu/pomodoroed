@@ -16,11 +16,9 @@ export const StartButton: React.FC<StartButtonProps> = ({
       className={`${styles["start-button"]} ${isDisabled ? "disabled" : ""}`}
       onClick={onClickStartButton}
     >
-      <div className={styles["start-button__content"]}>
         <div className={styles["start-button__text"]}>
           {isStarted ? "stop" : "start"}
         </div>
-      </div>
     </div>
   );
 };

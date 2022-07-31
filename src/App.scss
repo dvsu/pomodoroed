@@ -1,0 +1,21 @@
+@import "../sass/abstracts/variables";
+
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(5vw, 1fr) [main-start] minmax(30rem, 80rem)
+    [main-end] minmax(5vw, 1fr) [full-end];
+  grid-template-rows: minmax(20rem, 29vh);
+  align-content: center;
+  justify-content: center;
+
+  @media only screen and (min-width: $bp-mobile-small) {
+    grid-template-rows: minmax(30rem, 35vh);
+  }
+
+  @media only screen and (min-width: $bp-mobile-large) {
+    grid-template-rows: minmax(35rem, 40rem);
+  }
+}

@@ -1,15 +1,11 @@
-$grid-width: 800px;
+@import "../../sass/abstracts/variables";
 
 $timer-background-color-primary: rgb(81, 81, 81);
 $timer-background-color-secondary: rgb(64, 64, 64);
 $timer-background-color-tertiary: rgb(22, 22, 22);
 
 .timer-case {
-  //   position: absolute;
-  margin: 0 auto;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(0, 50%);
+  grid-column: main-start / main-end;
   background-image: linear-gradient(
     to bottom right,
     $timer-background-color-primary 0%,
@@ -17,15 +13,36 @@ $timer-background-color-tertiary: rgb(22, 22, 22);
     $timer-background-color-tertiary 50%
   );
   box-shadow: 2px 2px 0px #131313, -2px -2px 0px #cbcbcb;
-  border-radius: 3rem;
-  padding: 5rem 20rem;
-  max-width: $grid-width;
+  border-radius: 1.8rem;
+  display: grid;
+  grid-template-rows: minmax(min-content, 5rem) minmax(5rem, 10rem) minmax(
+      10vw,
+      10rem
+    );
+  align-items: center;
+  transition: all 0.25s;
+
+  @media only screen and (min-width: $bp-mobile-small) {
+    border-radius: 2.5rem;
+    grid-template-columns: minmax(min-content, 90vw);
+    grid-template-rows:
+      minmax(min-content, 7rem)
+      minmax(min-content, 20rem)
+      minmax(min-content, 10rem);
+  }
+
+  @media only screen and (min-width: $bp-mobile-large) {
+    border-radius: 3rem;
+    grid-template-rows:
+      minmax(min-content, 7rem)
+      minmax(min-content, 30rem)
+      minmax(min-content, 12rem);
+  }
 }
 
 .brand {
-  position: absolute;
-  top: 4%;
-  font-size: 2.5rem;
+  padding-left: 5vw;
+  font-size: 1.5rem;
   font-weight: 500;
   text-transform: uppercase;
   background-image: linear-gradient(
@@ -35,4 +52,13 @@ $timer-background-color-tertiary: rgb(22, 22, 22);
   );
   background-clip: text;
   color: transparent;
+  grid-row: 1/ 2;
+
+  @media only screen and (min-width: $bp-mobile-small) {
+    font-size: 2.5rem;
+  }
+
+  @media only screen and (min-width: $bp-mobile-large) {
+    font-size: 2.5rem;
+  }
 }

@@ -24,11 +24,6 @@ export const SelectorButton: React.FC<SelectorButtonProps> = ({
       ? "selector-button__subtext--selected"
       : "";
 
-  const selectedBackgroundStyle =
-    selectedTimeSeconds === timeSecondsLabel
-      ? "selector-button__background--selected"
-      : "";
-
   const selectedEdgeStyle =
     selectedTimeSeconds === timeSecondsLabel ? "selector-button--selected" : "";
 
@@ -38,18 +33,14 @@ export const SelectorButton: React.FC<SelectorButtonProps> = ({
       onClick={isStarted ? undefined : onSelected.bind(null, timeSecondsLabel)}
     >
       <div
-        className={`${styles["selector-button__background"]} ${styles[selectedBackgroundStyle]}`}
+        className={`${styles["selector-button__text"]} ${styles[selectedTextStyle]}`}
       >
-        <div
-          className={`${styles["selector-button__text"]} ${styles[selectedTextStyle]}`}
-        >
-          {minutes}
-        </div>
-        <div
-          className={`${styles["selector-button__subtext"]} ${styles[selectedSubtextStyle]}`}
-        >
-          min
-        </div>
+        {minutes}
+      </div>
+      <div
+        className={`${styles["selector-button__subtext"]} ${styles[selectedSubtextStyle]}`}
+      >
+        min
       </div>
     </div>
   );

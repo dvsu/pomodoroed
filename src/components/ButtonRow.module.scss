@@ -1,33 +1,15 @@
-@import "../../sass/abstracts/mixins";
-
-$gutter-horizontal: 2rem;
-$grid-width: 1140px;
-
 .button-row {
-  max-width: $grid-width;
-  text-align: right;
+  margin: 2vh 5vw 3vh 5vw;
+  max-width: 100%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 0.5rem;
 
-  //   @include clearfix;
-
-  //   [class*="--float"] {
-  //     float: left;
-  //   }
-
-  [class^="ButtonRow_button-"] {
-    &:not(:last-child) {
-      margin-right: $gutter-horizontal;
-    }
-  }
-
-  .button-1-7 {
-    display: inline-block;
-    width: calc((100% - (6 * #{$gutter-horizontal})) / 7);
-  }
-
-  .button-2-7 {
-    display: inline-block;
-    width: calc(
-      2 * ((100% - (6 * #{$gutter-horizontal})) / 7) + $gutter-horizontal
-    );
+  &__start {
+    grid-column: 5 / -1;
   }
 }

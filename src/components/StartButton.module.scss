@@ -1,5 +1,6 @@
 .start-button {
   width: 100%;
+  margin-left: 1vw;
   background-image: linear-gradient(
     to bottom right,
     rgb(255, 255, 255),
@@ -8,23 +9,28 @@
     rgb(197, 66, 0) 40%,
     rgb(26, 26, 26) 90%
   );
-  height: 6rem;
+  height: 4.9rem;
   position: relative;
-  border-radius: 0.7rem;
+  border-radius: 0.8rem;
+  z-index: 10;
 
   &:hover,
   &:active {
     cursor: pointer;
   }
 
-  &__content {
-    position: absolute;
+  &::before {
+    content: "";
     width: 96%;
     height: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
     background-image: linear-gradient(
       to bottom right,
-      rgb(255, 124, 73),
-      rgb(234, 78, 0)
+      rgb(255, 218, 203) 0%,
+      rgb(255, 124, 73) 30%,
+      rgb(234, 78, 0) 50%
     );
     transform: translate(2%, 5%);
     border-radius: 0.7rem;

@@ -21,24 +21,22 @@ export const ButtonRow: React.FC<ButtonRowProps> = ({
 }) => {
   return (
     <div className={styles["button-row"]}>
-      <div className={styles["button-row--float"]}>
-        {timeSelectorList.map((time) => (
-          <div className={styles["button-1-7"]}>
-            <SelectorButton
-              timeSecondsLabel={time}
-              selectedTimeSeconds={selectedTimeSeconds}
-              isStarted={isStarted}
-              onSelected={onSelected}
-            />
-          </div>
-        ))}
-        <div className={styles["button-2-7"]}>
-          <StartButton
-            onClickStartButton={onClickStartButton}
+      {timeSelectorList.map((time) => (
+        <div className={styles["button-row__select"]}>
+          <SelectorButton
+            timeSecondsLabel={time}
+            selectedTimeSeconds={selectedTimeSeconds}
             isStarted={isStarted}
-            isDisabled={isDisabled}
+            onSelected={onSelected}
           />
         </div>
+      ))}
+      <div className={styles["button-row__start"]}>
+        <StartButton
+          onClickStartButton={onClickStartButton}
+          isStarted={isStarted}
+          isDisabled={isDisabled}
+        />
       </div>
     </div>
   );

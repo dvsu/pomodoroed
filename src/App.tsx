@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { TimerCase } from "./components/TimerCase";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const [isStarted, setIsStarted] = useState(false);
